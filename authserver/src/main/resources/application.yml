@@ -1,0 +1,16 @@
+server:
+  port: 8000
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://wanlinus.site:3306/auth?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    hikari:
+      auto-commit: true
+      connection-init-sql: SET NAMES utf8mb4
+      pool-name: auth-hi
+  flyway:
+    schemas: auth
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    url: jdbc:mysql://wanlinus.site:3306

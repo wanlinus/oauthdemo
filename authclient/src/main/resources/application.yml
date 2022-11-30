@@ -1,0 +1,51 @@
+server:
+  http2:
+    enabled: true
+  port: 8080
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://wanlinus.site:3306/auth_client?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    hikari:
+      auto-commit: true
+      connection-init-sql: SET NAMES utf8mb4
+      pool-name: auth-hi
+  flyway:
+    schemas: auth_client
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    url: jdbc:mysql://wanlinus.site:3306
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: e207767c4fe757643c86
+            client-secret: 7d639421317750e1962e131dc12e6a2ae2d14f55
+            redirect-uri: http://127.0.0.1:8080/login/oauth2/code/github
+          google:
+            client-id: 756480299290-kf3o1ijudbt52nouuh1v8bmgv38t83v1.apps.googleusercontent.com
+            client-secret: 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
+          app:
+            client-id: client_id
+            client_secret: client_secret
+#            redirect-uri: http://127.0.0.1:8080/oauth/redirect
+            redirect-uri: http://127.0.0.1:8080/login/oauth2/code/app
+            provider: app
+            authorization-grant-type: authorization_code
+            client-authentication-method: client_secret_basic
+            client-name: app
+            scope:
+              - read
+        provider:
+          app:
+            authorization-uri: http://auth.wanlinus.site:4000/oauth2/authorize
+            tokenUri: http://auth.wanlinus.site:4000/oauth2/token
+            userInfoUri: http://auth.wanlinus.site:4000/api/user
+            userNameAttribute: username
+#logging:
+#  level:
+#    org.springframework: debug
+
+

@@ -1,0 +1,9 @@
+http://127.0.0.1:8000/oauth2/authorize?response_type=code&client_id=client_id&scope=read&redirect_uri=http://127.0.0.1:8080/login/oauth2/code/app
+
+
+
+
+
+
+
+http://wanlinus.site:4000/oauth2/authorize?response_type=code&client_id=client_id&scope=read&redirect_uri=http://127.0.0.1:8080/login/oauth2/code/app

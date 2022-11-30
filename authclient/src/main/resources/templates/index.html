@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
+    <style>
+        .aa {
+            font-size: 48px;
+            margin: auto;
+            padding: 96px 32px;
+            line-height: 24px;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .bb {
+            font-size: 30px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(235, 235, 235)">
+
+<div class="aa">用户信息</div>
+<div class="bb" th:text="'Username: ' + ${user.name}">用户名</div>
+<div class="bb" th:text="'All info: ' + ${user}">用户信息</div>
+
+<div class="container">
+    <div class="form-signin">
+        <a href="/logout" class="btn btn-lg btn-primary btn-block">退出</a>
+    </div>
+</div>
+</body>
+</html>
